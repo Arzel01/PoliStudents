@@ -116,6 +116,7 @@
   cursor: pointer;
   transition: all 0.2s;
   text-align: left;
+  position: relative;
 }
 
 .technique-card:hover {
@@ -127,6 +128,48 @@
   border-color: #3399FF;
   background: linear-gradient(135deg, #f0f7ff 0%, #e0efff 100%);
   box-shadow: 0 4px 12px rgba(51, 153, 255, 0.2);
+}
+
+/* Premium locked techniques */
+.technique-card.locked {
+  border-color: #e0e0e0;
+  background: #f8f9fa;
+  opacity: 0.85;
+}
+
+.technique-card.locked:hover {
+  border-color: #FFD700;
+  transform: translateY(-2px);
+}
+
+.technique-card.locked .technique-icon,
+.technique-card.locked .technique-name,
+.technique-card.locked .technique-desc {
+  opacity: 0.6;
+}
+
+.premium-lock-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(255, 165, 0, 0.4);
+}
+
+.lock-overlay {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  color: #FFD700;
+  opacity: 0.8;
 }
 
 .technique-icon {

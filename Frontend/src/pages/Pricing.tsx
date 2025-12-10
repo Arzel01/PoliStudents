@@ -7,10 +7,7 @@ import {
   GraduationCap, 
   User, 
   Building2,
-  Bot,
   BookOpen,
-  Calendar,
-  Flame,
   Star,
   Crown
 } from 'lucide-react';

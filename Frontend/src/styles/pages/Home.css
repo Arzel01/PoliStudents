@@ -305,6 +305,11 @@
   overflow: hidden;
 }
 
+.plan-promo-card.premium-active {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff4cc 100%);
+  border-color: #FFD700;
+}
+
 .plan-promo-header {
   display: flex;
   justify-content: space-between;
@@ -319,11 +324,23 @@
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.current-plan-badge.premium {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: white;
 }
 
 .promo-sparkle {
   color: #3399FF;
   animation: sparkle 2s ease-in-out infinite;
+}
+
+.plan-promo-card.premium-active .promo-sparkle {
+  color: #FFD700;
 }
 
 @keyframes sparkle {
@@ -356,6 +373,53 @@
   gap: 0.35rem;
   font-size: 0.8rem;
   color: #00b894;
+}
+
+.plan-features-preview.premium span {
+  color: #FFA500;
+}
+
+.premium-usage-info,
+.free-usage-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.usage-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.usage-item svg {
+  color: #FFA500;
+}
+
+.free-usage-info {
+  margin-bottom: 1rem;
+}
+
+.usage-text {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.premium-header-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: white;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .upgrade-btn {

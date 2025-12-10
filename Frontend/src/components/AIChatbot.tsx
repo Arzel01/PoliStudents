@@ -38,7 +38,7 @@ interface ChatContext {
 }
 
 // Simulated AI responses based on keywords
-const getAIResponse = (message: string, context: ChatContext): { content: string; sources: Source[]; suggestedTopics: string[] } => {
+const getAIResponse = (message: string, _context: ChatContext): { content: string; sources: Source[]; suggestedTopics: string[] } => {
   const lowerMessage = message.toLowerCase();
   
   // Search academic topics

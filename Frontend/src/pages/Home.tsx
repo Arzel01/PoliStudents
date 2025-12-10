@@ -14,7 +14,6 @@ import {
   Upload,
   ArrowRight,
   GraduationCap,
-  Zap,
   Crown,
   Sparkles
 } from 'lucide-react';

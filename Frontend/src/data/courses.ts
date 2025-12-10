@@ -363,68 +363,70 @@ export const courses: Course[] = [
         ]
       },
       {
-        id: 'liquidos-solidos',
-        title: 'Líquidos y Sólidos',
-        lessons: [
-          {
-            id: 'estados-1',
-            title: 'Propiedades de Líquidos y Sólidos',
-            description: 'Viscosidad, tensión superficial, estructuras cristalinas',
-            duration: 30,
-            content: [
-              'Viscosidad: resistencia al flujo',
-              'Tensión superficial: energía por unidad de área',
-              'Sólidos cristalinos vs amorfos'
-            ],
-            quiz: [
+          id: 'liquidos-solidos',
+          title: 'Líquidos y Sólidos',
+          minHours: 4,
+          lessons: [
               {
-                id: 'liq-q1',
-                question: 'La tensión superficial del agua permite que:',
-                options: [
-                  'El agua hierva a 100°C',
-                  'Algunos insectos caminen sobre el agua',
-                  'El agua se congele a 0°C',
-                  'El agua disuelva sales'
-                ],
-                correctIndex: 1,
-                explanation: 'La alta tensión superficial del agua crea una "película" en la superficie que soporta objetos ligeros.'
+                  id: 'estados-1',
+                  title: 'Propiedades de Líquidos y Sólidos',
+                  description: 'Viscosidad, tensión superficial, estructuras cristalinas',
+                  duration: 30,
+                  content: [
+                      'Viscosidad: resistencia al flujo',
+                      'Tensión superficial: energía por unidad de área',
+                      'Sólidos cristalinos vs amorfos'
+                  ],
+                  quiz: [
+                      {
+                          id: 'liq-q1',
+                          question: 'La tensión superficial del agua permite que:',
+                          options: [
+                              'El agua hierva a 100°C',
+                              'Algunos insectos caminen sobre el agua',
+                              'El agua se congele a 0°C',
+                              'El agua disuelva sales'
+                          ],
+                          correctIndex: 1,
+                          explanation: 'La alta tensión superficial del agua crea una "película" en la superficie que soporta objetos ligeros.'
+                      }
+                  ]
               }
-            ]
-          }
-        ]
+          ]
       },
       {
-        id: 'disoluciones',
-        title: 'Propiedades de las Disoluciones',
-        lessons: [
-          {
-            id: 'disol-1',
-            title: 'Concentración y Propiedades Coligativas',
-            description: 'Molaridad, molalidad, presión osmótica',
-            duration: 35,
-            content: [
-              'Molaridad (M) = moles soluto / litros solución',
-              'Molalidad (m) = moles soluto / kg solvente',
-              'ΔTeb = Kb · m · i (elevación del punto de ebullición)'
-            ],
-            quiz: [
+          id: 'disoluciones',
+          title: 'Propiedades de las Disoluciones',
+          minHours: 6,
+          lessons: [
               {
-                id: 'disol-q1',
-                question: 'Si disuelves 58.5 g de NaCl (PM=58.5) en agua hasta completar 500 mL de solución, ¿cuál es la molaridad?',
-                options: ['0.5 M', '1.0 M', '2.0 M', '0.25 M'],
-                correctIndex: 2,
-                explanation: 'n = 58.5g / 58.5g/mol = 1 mol. M = 1 mol / 0.5 L = 2 M'
-              },
-              {
-                id: 'disol-q2',
-                question: '¿Qué solución tiene mayor punto de ebullición?',
-                options: ['1 m glucosa', '1 m NaCl', '1 m CaCl₂', 'Agua pura'],
-                correctIndex: 2,
-                explanation: 'CaCl₂ → Ca²⁺ + 2Cl⁻ produce 3 partículas (i=3), mayor elevación del punto de ebullición.'
+                  id: 'disol-1',
+                  title: 'Concentración y Propiedades Coligativas',
+                  description: 'Molaridad, molalidad, presión osmótica',
+                  duration: 35,
+                  content: [
+                      'Molaridad (M) = moles soluto / litros solución',
+                      'Molalidad (m) = moles soluto / kg solvente',
+                      'ΔTeb = Kb · m · i (elevación del punto de ebullición)'
+                  ],
+                  quiz: [
+                      {
+                          id: 'disol-q1',
+                          question: 'Si disuelves 58.5 g de NaCl (PM=58.5) en agua hasta completar 500 mL de solución, ¿cuál es la molaridad?',
+                          options: ['0.5 M', '1.0 M', '2.0 M', '0.25 M'],
+                          correctIndex: 2,
+                          explanation: 'n = 58.5g / 58.5g/mol = 1 mol. M = 1 mol / 0.5 L = 2 M'
+                      },
+                      {
+                          id: 'disol-q2',
+                          question: '¿Qué solución tiene mayor punto de ebullición?',
+                          options: ['1 m glucosa', '1 m NaCl', '1 m CaCl₂', 'Agua pura'],
+                          correctIndex: 2,
+                          explanation: 'CaCl₂ → Ca²⁺ + 2Cl⁻ produce 3 partículas (i=3), mayor elevación del punto de ebullición.'
+                      }
+                  ]
               }
-            ]
-          }
-        ]
+          ]
       },
       {
         id: 'cinetica',
@@ -711,49 +713,50 @@ export const courses: Course[] = [
         ]
       },
       {
-        id: 'estructuras',
-        title: 'Estructuras de Control',
-        lessons: [
-          {
-            id: 'control-1',
-            title: 'Condicionales y Bucles',
-            description: 'if/else, while, for',
-            duration: 40,
-            content: [
-              'if condicion: / elif: / else:',
-              'while condicion: (repite mientras sea verdadero)',
-              'for elemento in secuencia: (itera sobre elementos)'
-            ],
-            quiz: [
+          id: 'estructuras',
+          title: 'Estructuras de Control',
+          minHours: 6,
+          lessons: [
               {
-                id: 'ctrl-q1',
-                question: '¿Cuántas veces se ejecuta el print?\nfor i in range(5):\n    print(i)',
-                options: ['4', '5', '6', 'Infinitas'],
-                correctIndex: 1,
-                explanation: 'range(5) genera 0,1,2,3,4 - cinco valores, cinco iteraciones.'
-              },
-              {
-                id: 'ctrl-q2',
-                question: '¿Qué imprime?\nx = 10\nif x > 5:\n    print("A")\nelif x > 8:\n    print("B")\nelse:\n    print("C")',
-                options: ['A', 'B', 'A y B', 'C'],
-                correctIndex: 0,
-                explanation: 'x=10 > 5 es True, imprime "A" y sale. El elif no se evalúa porque el if ya fue verdadero.'
-              },
-              {
-                id: 'ctrl-q3',
-                question: '¿Qué hace break en un bucle?',
-                options: [
-                  'Pausa el bucle temporalmente',
-                  'Termina el bucle inmediatamente',
-                  'Salta a la siguiente iteración',
-                  'Reinicia el bucle'
-                ],
-                correctIndex: 1,
-                explanation: 'break termina el bucle. continue salta a la siguiente iteración.'
+                  id: 'control-1',
+                  title: 'Condicionales y Bucles',
+                  description: 'if/else, while, for',
+                  duration: 40,
+                  content: [
+                      'if condicion: / elif: / else:',
+                      'while condicion: (repite mientras sea verdadero)',
+                      'for elemento in secuencia: (itera sobre elementos)'
+                  ],
+                  quiz: [
+                      {
+                          id: 'ctrl-q1',
+                          question: '¿Cuántas veces se ejecuta el print?\nfor i in range(5):\n    print(i)',
+                          options: ['4', '5', '6', 'Infinitas'],
+                          correctIndex: 1,
+                          explanation: 'range(5) genera 0,1,2,3,4 - cinco valores, cinco iteraciones.'
+                      },
+                      {
+                          id: 'ctrl-q2',
+                          question: '¿Qué imprime?\nx = 10\nif x > 5:\n    print("A")\nelif x > 8:\n    print("B")\nelse:\n    print("C")',
+                          options: ['A', 'B', 'A y B', 'C'],
+                          correctIndex: 0,
+                          explanation: 'x=10 > 5 es True, imprime "A" y sale. El elif no se evalúa porque el if ya fue verdadero.'
+                      },
+                      {
+                          id: 'ctrl-q3',
+                          question: '¿Qué hace break en un bucle?',
+                          options: [
+                              'Pausa el bucle temporalmente',
+                              'Termina el bucle inmediatamente',
+                              'Salta a la siguiente iteración',
+                              'Reinicia el bucle'
+                          ],
+                          correctIndex: 1,
+                          explanation: 'break termina el bucle. continue salta a la siguiente iteración.'
+                      }
+                  ]
               }
-            ]
-          }
-        ]
+          ]
       },
       {
         id: 'colecciones',
@@ -790,37 +793,38 @@ export const courses: Course[] = [
         ]
       },
       {
-        id: 'arreglos',
-        title: 'Arreglos N-dimensionales',
-        lessons: [
-          {
-            id: 'arr-1',
-            title: 'Matrices y Arreglos 2D',
-            description: 'Listas anidadas y acceso a elementos',
-            duration: 35,
-            content: [
-              'Matriz: lista de listas [[1,2], [3,4]]',
-              'Acceso: matriz[fila][columna]',
-              'Iteración con bucles anidados'
-            ],
-            quiz: [
+          id: 'arreglos',
+          title: 'Arreglos N-dimensionales',
+          minHours: 4,
+          lessons: [
               {
-                id: 'arr-q1',
-                question: 'Si m = [[1,2,3], [4,5,6]], ¿qué es m[1][0]?',
-                options: ['1', '2', '4', '5'],
-                correctIndex: 2,
-                explanation: 'm[1] = [4,5,6] (segunda fila). m[1][0] = 4 (primer elemento).'
-              },
-              {
-                id: 'arr-q2',
-                question: '¿Cuántos elementos tiene una matriz 3x4?',
-                options: ['7', '12', '34', '43'],
-                correctIndex: 1,
-                explanation: 'Una matriz 3x4 tiene 3 filas × 4 columnas = 12 elementos.'
+                  id: 'arr-1',
+                  title: 'Matrices y Arreglos 2D',
+                  description: 'Listas anidadas y acceso a elementos',
+                  duration: 35,
+                  content: [
+                      'Matriz: lista de listas [[1,2], [3,4]]',
+                      'Acceso: matriz[fila][columna]',
+                      'Iteración con bucles anidados'
+                  ],
+                  quiz: [
+                      {
+                          id: 'arr-q1',
+                          question: 'Si m = [[1,2,3], [4,5,6]], ¿qué es m[1][0]?',
+                          options: ['1', '2', '4', '5'],
+                          correctIndex: 2,
+                          explanation: 'm[1] = [4,5,6] (segunda fila). m[1][0] = 4 (primer elemento).'
+                      },
+                      {
+                          id: 'arr-q2',
+                          question: '¿Cuántos elementos tiene una matriz 3x4?',
+                          options: ['7', '12', '34', '43'],
+                          correctIndex: 1,
+                          explanation: 'Una matriz 3x4 tiene 3 filas × 4 columnas = 12 elementos.'
+                      }
+                  ]
               }
-            ]
-          }
-        ]
+          ]
       },
       {
         id: 'archivos',
@@ -862,37 +866,38 @@ export const courses: Course[] = [
         ]
       },
       {
-        id: 'procesamiento',
-        title: 'Procesamiento de Datos',
-        lessons: [
-          {
-            id: 'proc-1',
-            title: 'Manipulación y Análisis Básico',
-            description: 'Filtrado, ordenamiento y búsqueda',
-            duration: 35,
-            content: [
-              'Filtrar: [x for x in lista if condicion]',
-              'Ordenar: sorted(lista) o lista.sort()',
-              'Búsqueda: elemento in lista'
-            ],
-            quiz: [
+          id: 'procesamiento',
+          title: 'Procesamiento de Datos',
+          minHours: 6,
+          lessons: [
               {
-                id: 'proc-q1',
-                question: '¿Qué devuelve [x*2 for x in [1,2,3]]?',
-                options: ['[1, 2, 3]', '[2, 4, 6]', '[1, 4, 9]', '[[2], [4], [6]]'],
-                correctIndex: 1,
-                explanation: 'List comprehension: multiplica cada elemento por 2. [1*2, 2*2, 3*2] = [2, 4, 6]'
-              },
-              {
-                id: 'proc-q2',
-                question: '¿Cuál es el resultado de sorted([3, 1, 4, 1, 5])?',
-                options: ['[5, 4, 3, 1, 1]', '[1, 1, 3, 4, 5]', '[3, 1, 4, 1, 5]', '[1, 3, 4, 5]'],
-                correctIndex: 1,
-                explanation: 'sorted() devuelve una nueva lista ordenada de menor a mayor.'
+                  id: 'proc-1',
+                  title: 'Manipulación y Análisis Básico',
+                  description: 'Filtrado, ordenamiento y búsqueda',
+                  duration: 35,
+                  content: [
+                      'Filtrar: [x for x in lista if condicion]',
+                      'Ordenar: sorted(lista) o lista.sort()',
+                      'Búsqueda: elemento in lista'
+                  ],
+                  quiz: [
+                      {
+                          id: 'proc-q1',
+                          question: '¿Qué devuelve [x*2 for x in [1,2,3]]?',
+                          options: ['[1, 2, 3]', '[2, 4, 6]', '[1, 4, 9]', '[[2], [4], [6]]'],
+                          correctIndex: 1,
+                          explanation: 'List comprehension: multiplica cada elemento por 2. [1*2, 2*2, 3*2] = [2, 4, 6]'
+                      },
+                      {
+                          id: 'proc-q2',
+                          question: '¿Cuál es el resultado de sorted([3, 1, 4, 1, 5])?',
+                          options: ['[5, 4, 3, 1, 1]', '[1, 1, 3, 4, 5]', '[3, 1, 4, 1, 5]', '[1, 3, 4, 5]'],
+                          correctIndex: 1,
+                          explanation: 'sorted() devuelve una nueva lista ordenada de menor a mayor.'
+                      }
+                  ]
               }
-            ]
-          }
-        ]
+          ]
       }
     ]
   }

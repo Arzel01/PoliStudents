@@ -2,11 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { 
   ArrowLeft, Play, Pause, RotateCcw, ChevronRight, ChevronDown,
-  BookOpen, Brain, Lightbulb, Clock, CheckCircle, Star,
+  BookOpen, Brain, Lightbulb, CheckCircle, Star,
   Volume2, VolumeX, Coffee, Target
 } from 'lucide-react';
-import { courses } from '../data/courses';
-import { getContentForLesson, type TopicContent, type SubTopic, type Example } from '../data/studyContent';
+import { getContentForLesson, type TopicContent, type Example } from '../data/studyContent';
 import '../styles/pages/ActiveStudy.css';
 
 // Configuración de técnicas de estudio
@@ -67,7 +66,6 @@ export default function ActiveStudy() {
   
   // Refs
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Cargar contenido
   useEffect(() => {
@@ -197,24 +195,6 @@ export default function ActiveStudy() {
   const currentSubtopic = content?.subtopics[currentSubtopicIndex];
   const config = techniqueConfigs[technique];
   const progress = content ? ((currentSubtopicIndex + 1) / content.subtopics.length) * 100 : 0;
-
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case 'easy': return '#2ecc71';
-      case 'medium': return '#f39c12';
-      case 'hard': return '#e74c3c';
-      default: return '#999';
-    }
-  };
-
-  const getDifficultyLabel = (difficulty: string) => {
-    switch (difficulty) {
-      case 'easy': return 'Fácil';
-      case 'medium': return 'Medio';
-      case 'hard': return 'Difícil';
-      default: return difficulty;
-    }
-  };
 
   if (!content) {
     return (
