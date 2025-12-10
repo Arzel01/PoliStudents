@@ -29,7 +29,7 @@
   transform: translate(-50%, -50%);
   width: 120px;
   height: 120px;
-  background: rgba(108, 92, 231, 0.3);
+  background: rgba(51, 153, 255, 0.3);
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
 }
@@ -135,7 +135,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #6c5ce7, #a855f7, #00b894);
+  background: linear-gradient(90deg, #3399FF, #66B3FF, #00b894);
   background-size: 200% 100%;
   border-radius: 4px;
   transition: width 0.1s ease-out;

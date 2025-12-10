@@ -13,11 +13,20 @@ import {
   Home as HomeIcon,
   Upload,
   ArrowRight,
-  FolderUp
+  GraduationCap,
+  Zap,
+  Crown,
+  Sparkles
 } from 'lucide-react';
-import './Home.css';
+import { useAuth } from '../context';
+import '../styles/pages/Home.css';
 
 export default function Home() {
+  const { user } = useAuth();
+  
+  // Obtener el nombre del usuario o usar un valor por defecto
+  const userName = user?.username || 'Estudiante';
+  
   // Demo stats
   const stats = {
     streak: 5,
@@ -37,9 +46,8 @@ export default function Home() {
           </div>
         </div>
         <div className="header-right">
-          <Link to="/streak" className="streak-badge">
-            <Flame className="streak-fire" size={20} />
-            <span className="streak-count">{stats.streak}</span>
+          <Link to="/streak" className="streak-btn">
+            <Flame size={20} />
           </Link>
           <div className="user-avatar">
             <User size={20} />
@@ -51,7 +59,7 @@ export default function Home() {
       <main className="home-content">
         {/* Welcome Section */}
         <section className="welcome-section">
-          <h1>¡Hola, Estudiante!</h1>
+          <h1>¡Hola, {userName}!</h1>
           <p>¿Listo para continuar tu camino de aprendizaje?</p>
         </section>
 
@@ -59,11 +67,11 @@ export default function Home() {
         <section className="quick-actions-section">
           <Link to="/upload" className="main-action-card">
             <div className="action-icon-large">
-              <FolderUp size={32} />
+              <GraduationCap size={32} />
             </div>
             <div className="action-content">
-              <h2>Subir Nuevo Material</h2>
-              <p>Comienza un nuevo plan de estudio con tu material</p>
+              <h2>Elabora tu Plan de Estudio</h2>
+              <p>Selecciona una materia y personaliza tu aprendizaje</p>
             </div>
             <ArrowRight className="action-arrow" size={24} />
           </Link>
@@ -135,6 +143,27 @@ export default function Home() {
                 seguidos de 5 minutos de descanso. ¡Pruébalo en tu próxima sesión!
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Plan Section */}
+        <section className="plan-section">
+          <div className="plan-promo-card">
+            <div className="plan-promo-header">
+              <span className="current-plan-badge">Plan Gratuito</span>
+              <Sparkles size={20} className="promo-sparkle" />
+            </div>
+            <h3>Desbloquea más funciones</h3>
+            <p>Agrega materias personalizadas y usa IA para personalizar tu estudio</p>
+            <div className="plan-features-preview">
+              <span><CheckCircle size={14} /> Materias personalizadas</span>
+              <span><CheckCircle size={14} /> Chatbot IA</span>
+              <span><CheckCircle size={14} /> Búsqueda académica</span>
+            </div>
+            <Link to="/pricing" className="upgrade-btn">
+              <Crown size={18} />
+              Ver Planes desde $5/mes
+            </Link>
           </div>
         </section>
       </main>

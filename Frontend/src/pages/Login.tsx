@@ -3,7 +3,7 @@ import { useState, type FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context';
 import { Lightbulb, Pencil, FileText, Heart, CheckSquare, Sparkle, Mail, Lock } from 'lucide-react';
-import './Auth.css';
+import '../styles/pages/Auth.css';
 
 export default function Login() {
   const [username, setUsername] = useState('');

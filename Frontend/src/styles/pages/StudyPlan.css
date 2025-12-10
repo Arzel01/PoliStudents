@@ -5,7 +5,7 @@
 
 /* Header */
 .plan-header {
-  background: linear-gradient(135deg, #6c5ce7 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #3399FF 0%, #66B3FF 100%);
   padding: 1.5rem 2rem;
   position: sticky;
   top: 0;
@@ -21,7 +21,7 @@
 }
 
 .back-btn {
-  background: rgba(255,255,255,0.2);
+  background: #3399FF;
   border: none;
   color: white;
   padding: 0.6rem 1rem;
@@ -32,10 +32,12 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(51, 153, 255, 0.3);
 }
 
 .back-btn:hover {
-  background: rgba(255,255,255,0.3);
+  background: #2288EE;
+  transform: translateX(-4px);
 }
 
 .plan-title-section {
@@ -82,11 +84,36 @@
 
 .action-btn.primary {
   background: white;
-  color: #6c5ce7;
+  color: #3399FF;
 }
 
 .action-btn.primary:hover {
   transform: scale(1.05);
+}
+
+.action-btn.ai-btn {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #333;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn.ai-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+}
+
+.action-btn.ai-btn .sparkle {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
 /* Content */
@@ -136,7 +163,7 @@
   stroke-width: 8;
   stroke-linecap: round;
   transition: stroke-dasharray 0.5s ease;
-  stroke: #6c5ce7;
+  stroke: #3399FF;
 }
 
 .progress-value {
@@ -146,7 +173,7 @@
   transform: translate(-50%, -50%);
   font-size: 1.75rem;
   font-weight: 700;
-  color: #6c5ce7;
+  color: #3399FF;
 }
 
 .progress-info h3 {
@@ -177,7 +204,7 @@
 
 .stat-icon {
   font-size: 1.5rem;
-  color: #6c5ce7;
+  color: #3399FF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,8 +251,8 @@
 }
 
 .session-card.active {
-  border-color: #6c5ce7;
-  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.15);
+  border-color: #3399FF;
+  box-shadow: 0 4px 15px rgba(51, 153, 255, 0.15);
 }
 
 .session-header {
@@ -244,7 +271,7 @@
 .session-number {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #6c5ce7 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #3399FF 0%, #66B3FF 100%);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -374,6 +401,11 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: auto;
+  max-width: 100px;
+  justify-content: center;
 }
 
 .quiz-btn:hover {

@@ -1,8 +1,8 @@
 // Subject Selection page component - DEMO MODE
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, FolderUp, PenTool, FlaskConical, Code } from 'lucide-react';
+import { ArrowLeft, ArrowRight, FolderUp, PenTool, FlaskConical, Code, Lock, Crown, Sparkles } from 'lucide-react';
 import { courses } from '../data/courses';
-import './Upload.css';
+import '../styles/pages/Upload.css';
 
 // Icon map for courses
 const courseIcons: Record<string, React.ReactNode> = {
@@ -27,6 +27,15 @@ export default function Upload() {
           title: course.name,
           description: course.description
         }
+      } 
+    });
+  }
+
+  function handleUploadMaterial() {
+    navigate('/pricing', { 
+      state: { 
+        reason: 'upload',
+        message: 'Subir material personalizado requiere un plan de pago' 
       } 
     });
   }
@@ -71,12 +80,26 @@ export default function Upload() {
           ))}
         </div>
 
-        <div className="coming-soon-notice">
-          <FolderUp className="notice-icon" size={28} />
-          <div className="notice-content">
-            <h4>¿Tienes tu propio material?</h4>
-            <p>La función de subir archivos (PDF, DOCX, PPTX) será implementada próximamente. ¡Podrás crear planes de estudio desde tus propios apuntes!</p>
+        <div className="premium-upload-card" onClick={handleUploadMaterial}>
+          <div className="premium-badge">
+            <Crown size={14} />
+            <span>Premium</span>
           </div>
+          <div className="premium-icon">
+            <FolderUp size={32} />
+            <Lock size={16} className="lock-overlay" />
+          </div>
+          <div className="premium-content">
+            <h4>Subir tu propio material</h4>
+            <p>Sube PDFs, DOCX o PPTX y crea planes de estudio personalizados con tus propios apuntes</p>
+            <div className="premium-features">
+              <span><Sparkles size={12} /> IA analiza tu contenido</span>
+              <span><Sparkles size={12} /> Genera quizzes automáticos</span>
+            </div>
+          </div>
+          <button className="upgrade-link">
+            Ver planes <ArrowRight size={16} />
+          </button>
         </div>
       </div>
     </div>

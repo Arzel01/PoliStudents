@@ -61,7 +61,7 @@
 
 .material-icon {
   font-size: 2rem;
-  color: #6c5ce7;
+  color: #3399FF;
   display: flex;
   align-items: center;
 }
@@ -119,20 +119,20 @@
 }
 
 .technique-card:hover {
-  border-color: #6c5ce7;
+  border-color: #3399FF;
   transform: translateY(-2px);
 }
 
 .technique-card.selected {
-  border-color: #6c5ce7;
-  background: linear-gradient(135deg, #f8f7ff 0%, #ede8ff 100%);
-  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+  border-color: #3399FF;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0efff 100%);
+  box-shadow: 0 4px 12px rgba(51, 153, 255, 0.2);
 }
 
 .technique-icon {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #6c5ce7;
+  color: #3399FF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,7 +241,7 @@
 
 .option-group input[type="date"]:focus {
   outline: none;
-  border-color: #6c5ce7;
+  border-color: #3399FF;
 }
 
 /* Number Input */
@@ -256,7 +256,7 @@
   height: 40px;
   border: none;
   border-radius: 8px;
-  background: #6c5ce7;
+  background: #3399FF;
   color: white;
   font-size: 1.25rem;
   cursor: pointer;
@@ -264,7 +264,7 @@
 }
 
 .number-input button:hover {
-  background: #5b4cdb;
+  background: #2288EE;
   transform: scale(1.05);
 }
 
@@ -294,12 +294,12 @@
 }
 
 .duration-btn:hover {
-  border-color: #6c5ce7;
+  border-color: #3399FF;
 }
 
 .duration-btn.selected {
-  border-color: #6c5ce7;
-  background: #6c5ce7;
+  border-color: #3399FF;
+  background: #3399FF;
   color: white;
 }
 
@@ -307,15 +307,236 @@
 .option-group input[type="range"] {
   width: 100%;
   margin: 0.5rem 0;
-  accent-color: #6c5ce7;
+  accent-color: #3399FF;
 }
 
 .range-value {
   display: block;
   text-align: center;
   font-weight: 600;
-  color: #6c5ce7;
+  color: #3399FF;
   font-size: 1.1rem;
+}
+
+/* Presets Section */
+.presets-section {
+  margin-bottom: 1.5rem;
+}
+
+.presets-label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.presets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.preset-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preset-card:hover {
+  border-color: #3399FF;
+  background: #f0f7ff;
+}
+
+.preset-card.selected {
+  border-color: #3399FF;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+  box-shadow: 0 4px 15px rgba(51, 153, 255, 0.2);
+}
+
+.preset-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.preset-card.selected .preset-icon,
+.preset-card:hover .preset-icon {
+  background: #3399FF;
+  color: white;
+}
+
+.preset-name {
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.preset-desc {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.preset-details {
+  font-size: 0.8rem;
+  color: #3399FF;
+  font-weight: 500;
+}
+
+.preset-total {
+  font-size: 0.7rem;
+  color: #666;
+  margin-top: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(51, 153, 255, 0.1);
+  border-radius: 10px;
+}
+
+.preset-card.selected .preset-total {
+  background: rgba(51, 153, 255, 0.2);
+}
+
+/* Custom Divider */
+.custom-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.custom-divider::before,
+.custom-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.custom-divider span {
+  padding: 0 1rem;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Number Input Large */
+.number-input.large {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.number-input.large button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.number-input.large button:hover {
+  background: #3399FF;
+  color: white;
+}
+
+.number-input.large button:first-child {
+  border-right: 1px solid #e8e8e8;
+}
+
+.number-input.large button:last-child {
+  border-left: 1px solid #e8e8e8;
+}
+
+.number-input.large input {
+  flex: 1;
+  border: none;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  padding: 0.75rem;
+  min-width: 60px;
+  -moz-appearance: textfield;
+}
+
+.number-input.large input::-webkit-outer-spin-button,
+.number-input.large input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-input.large input:focus {
+  outline: none;
+}
+
+.input-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.35rem;
+  text-align: center;
+}
+
+/* Time Summary Card */
+.time-summary-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+
+.time-summary-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-summary-stat .stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #3399FF;
+}
+
+.time-summary-stat .stat-label {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.time-summary-stat.total .stat-number {
+  color: #00b894;
+}
+
+.time-summary-x,
+.time-summary-eq {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #999;
 }
 
 /* Days Selector */
@@ -389,11 +610,100 @@
   color: #1a1a2e;
 }
 
+/* Time Validation Section */
+.time-validation {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid;
+}
+
+.time-validation.valid {
+  border-left-color: #00b894;
+  background: linear-gradient(135deg, #f0fff4 0%, #e8fff0 100%);
+}
+
+.time-validation.warning {
+  border-left-color: #ff9f43;
+  background: linear-gradient(135deg, #fff8f0 0%, #ffefe0 100%);
+}
+
+.validation-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.validation-icon {
+  flex-shrink: 0;
+}
+
+.validation-icon.valid {
+  color: #00b894;
+}
+
+.validation-icon.warning {
+  color: #ff9f43;
+}
+
+.validation-info h4 {
+  font-size: 1rem;
+  color: #1a1a2e;
+  margin-bottom: 0.25rem;
+}
+
+.validation-info p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.validation-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shortfall-message {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.shortfall-message strong {
+  color: #ff6b35;
+}
+
+.unit-warnings {
+  background: rgba(255, 159, 67, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.warnings-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.unit-warnings ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.unit-warnings li {
+  font-size: 0.85rem;
+  color: #666;
+  padding: 0.25rem 0;
+}
+
 /* Generate Button */
 .generate-btn {
   width: 100%;
   padding: 1.25rem 2rem;
-  background: linear-gradient(135deg, #6c5ce7 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #3399FF 0%, #66B3FF 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -405,16 +715,18 @@
   justify-content: center;
   gap: 0.75rem;
   transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+  box-shadow: 0 4px 15px rgba(51, 153, 255, 0.4);
 }
 
 .generate-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.5);
+  box-shadow: 0 6px 20px rgba(51, 153, 255, 0.5);
 }
 
 .btn-icon {
   font-size: 1.4rem;
+  display: flex;
+  align-items: center;
 }
 
 /* Mobile Responsive */
@@ -444,5 +756,35 @@
 
   .days-selector {
     justify-content: center;
+  }
+
+  .presets-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .preset-card {
+    padding: 0.75rem;
+  }
+
+  .preset-desc {
+    display: none;
+  }
+
+  .time-summary-card {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .time-summary-stat .stat-number {
+    font-size: 1.25rem;
+  }
+
+  .number-input.large button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .number-input.large input {
+    font-size: 1.1rem;
   }
 }

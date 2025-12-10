@@ -31,13 +31,13 @@
 }
 
 .logo-icon {
-  color: #6c5ce7;
+  color: #3399FF;
 }
 
 .logo-text {
   font-size: 1.25rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #6c5ce7 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #3399FF 0%, #66B3FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -49,23 +49,23 @@
   gap: 1rem;
 }
 
-.streak-badge {
+.streak-btn {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  background: linear-gradient(135deg, #ff9f43 0%, #ffd93d 100%);
-  padding: 0.4rem 0.75rem;
-  border-radius: 20px;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.35);
+  transition: all 0.2s;
 }
 
-.streak-fire {
-  color: #ff6b35;
-}
-
-.streak-count {
-  font-weight: 700;
-  color: #1a1a2e;
+.streak-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 12px rgba(255, 107, 107, 0.45);
 }
 
 .user-avatar {
@@ -111,18 +111,18 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  background: linear-gradient(135deg, #6c5ce7 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #3399FF 0%, #66B3FF 100%);
   color: white;
   padding: 1.5rem;
   border-radius: 16px;
   text-decoration: none;
   transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 4px 15px rgba(51, 153, 255, 0.3);
 }
 
 .main-action-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+  box-shadow: 0 6px 20px rgba(51, 153, 255, 0.4);
 }
 
 .action-icon-large {
@@ -191,7 +191,7 @@
 }
 
 .stat-card.fire { border-top: 3px solid #ff9f43; }
-.stat-card.purple { border-top: 3px solid #6c5ce7; }
+.stat-card.purple { border-top: 3px solid #3399FF; }
 .stat-card.green { border-top: 3px solid #00b894; }
 .stat-card.yellow { border-top: 3px solid #ffd93d; }
 
@@ -201,7 +201,7 @@
 }
 
 .stat-card.fire .stat-icon { color: #ff9f43; }
-.stat-card.purple .stat-icon { color: #6c5ce7; }
+.stat-card.purple .stat-icon { color: #3399FF; }
 .stat-card.green .stat-icon { color: #00b894; }
 .stat-card.yellow .stat-icon { color: #ffd93d; }
 
@@ -246,7 +246,7 @@
 }
 
 .nav-icon {
-  color: #6c5ce7;
+  color: #3399FF;
 }
 
 .nav-info h3 {
@@ -291,6 +291,92 @@
   line-height: 1.5;
 }
 
+/* Plan Section */
+.plan-section {
+  margin-bottom: 2rem;
+}
+
+.plan-promo-card {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+  border: 2px solid #3399FF;
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-promo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.current-plan-badge {
+  background: #e0e0e0;
+  color: #666;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.promo-sparkle {
+  color: #3399FF;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.5; transform: scale(0.9) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.1) rotate(15deg); }
+}
+
+.plan-promo-card h3 {
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.plan-promo-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.plan-features-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.plan-features-preview span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #00b894;
+}
+
+.upgrade-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #3399FF 0%, #66B3FF 100%);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.upgrade-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(51, 153, 255, 0.4);
+}
+
 /* Bottom Navigation */
 .bottom-nav {
   position: fixed;
@@ -317,7 +403,7 @@
 
 .nav-item.active,
 .nav-item:hover {
-  color: #6c5ce7;
+  color: #3399FF;
 }
 
 .nav-item-icon {
@@ -365,7 +451,7 @@
   }
 
   .nav-icon {
-    color: #6c5ce7;
+    color: #3399FF;
   }
 }
 

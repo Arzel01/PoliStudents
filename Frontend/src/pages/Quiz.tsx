@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { courses, type Question } from '../data/courses';
 import { PartyPopper, BookOpen, Flame, Check, X, Lightbulb } from 'lucide-react';
-import './Quiz.css';
+import '../styles/pages/Quiz.css';
 
 // Get questions for a specific lesson
 function getQuestionsForLesson(courseId: string, lessonId: string): Question[] {

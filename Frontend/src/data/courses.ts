@@ -20,6 +20,7 @@ export interface Lesson {
 export interface Unit {
   id: string;
   title: string;
+  minHours: number; // Horas mínimas según sílabo
   lessons: Lesson[];
 }
 
@@ -29,6 +30,7 @@ export interface Course {
   icon: string;
   color: string;
   description: string;
+  totalMinHours: number; // Total de horas mínimas según sílabo
   units: Unit[];
 }
 
@@ -37,12 +39,14 @@ export const courses: Course[] = [
     id: 'calculo',
     name: 'Cálculo de una Variable',
     icon: '📐',
-    color: '#6c5ce7',
+    color: '#3399FF',
     description: 'Límites, derivadas e integrales',
+    totalMinHours: 42, // 9 + 12 + 9 + 12 según sílabo
     units: [
       {
         id: 'limites',
-        title: 'Límites',
+        title: 'Límites y Continuidad',
+        minHours: 9, // Según sílabo
         lessons: [
           {
             id: 'limites-1',
@@ -119,7 +123,8 @@ export const courses: Course[] = [
       },
       {
         id: 'derivadas',
-        title: 'Derivadas',
+        title: 'Derivadas y sus Aplicaciones',
+        minHours: 12, // Según sílabo
         lessons: [
           {
             id: 'derivadas-1',
@@ -191,7 +196,8 @@ export const courses: Course[] = [
       },
       {
         id: 'integrales-indef',
-        title: 'Integrales Indefinidas',
+        title: 'Antiderivadas y Técnicas de Integración',
+        minHours: 9, // Según sílabo
         lessons: [
           {
             id: 'int-indef-1',
@@ -224,7 +230,8 @@ export const courses: Course[] = [
       },
       {
         id: 'integrales-def',
-        title: 'Integrales Definidas',
+        title: 'Integral Definida y sus Aplicaciones',
+        minHours: 12, // Según sílabo
         lessons: [
           {
             id: 'int-def-1',
@@ -268,10 +275,12 @@ export const courses: Course[] = [
     icon: '🧪',
     color: '#00b894',
     description: 'Termoquímica, soluciones y equilibrio',
+    totalMinHours: 42, // 6 + 8 + 8 + 6 + 6 + 8 según sílabo
     units: [
       {
         id: 'termoquimica',
         title: 'Introducción a la Termoquímica',
+        minHours: 6, // Según sílabo
         lessons: [
           {
             id: 'termo-1',
@@ -316,7 +325,8 @@ export const courses: Course[] = [
       },
       {
         id: 'fuerzas-inter',
-        title: 'Fuerzas Intermoleculares',
+        title: 'Fuerzas Intermoleculares, Líquidos y Sólidos',
+        minHours: 8, // Según sílabo
         lessons: [
           {
             id: 'fuerzas-1',
@@ -419,6 +429,7 @@ export const courses: Course[] = [
       {
         id: 'cinetica',
         title: 'Cinética Química',
+        minHours: 6, // Según sílabo
         lessons: [
           {
             id: 'cinetica-1',
@@ -461,7 +472,8 @@ export const courses: Course[] = [
       },
       {
         id: 'equilibrio',
-        title: 'Equilibrio Químico',
+        title: 'Equilibrio Químico y de Solubilidad',
+        minHours: 6, // Según sílabo
         lessons: [
           {
             id: 'eq-1',
@@ -504,7 +516,8 @@ export const courses: Course[] = [
       },
       {
         id: 'solubilidad',
-        title: 'Equilibrio de Solubilidad',
+        title: 'Equilibrio Ácido-Base',
+        minHours: 8, // Según sílabo
         lessons: [
           {
             id: 'sol-1',
@@ -536,10 +549,12 @@ export const courses: Course[] = [
     icon: '💻',
     color: '#e17055',
     description: 'Variables, funciones y estructuras de datos',
+    totalMinHours: 42, // 2 + 6 + 6 + 4 + 6 + 10 + 4 + 4 según sílabo
     units: [
       {
         id: 'intro-prog',
         title: 'Introducción a la Programación',
+        minHours: 2, // Según sílabo
         lessons: [
           {
             id: 'intro-1',
@@ -577,7 +592,8 @@ export const courses: Course[] = [
       },
       {
         id: 'variables',
-        title: 'Variables y Tipos de Datos',
+        title: 'Variables y Tipos de Datos (Strings y Listas)',
+        minHours: 6, // Según sílabo
         lessons: [
           {
             id: 'var-1',
@@ -656,7 +672,8 @@ export const courses: Course[] = [
       },
       {
         id: 'funciones',
-        title: 'Funciones',
+        title: 'Funciones y Estructuras de Control',
+        minHours: 10, // 6 funciones + 4 estructuras según sílabo
         lessons: [
           {
             id: 'func-1',
@@ -740,7 +757,8 @@ export const courses: Course[] = [
       },
       {
         id: 'colecciones',
-        title: 'Colecciones',
+        title: 'Colecciones y Arreglos n-dimensionales',
+        minHours: 16, // 6 colecciones + 10 arreglos según sílabo
         lessons: [
           {
             id: 'col-1',
@@ -806,7 +824,8 @@ export const courses: Course[] = [
       },
       {
         id: 'archivos',
-        title: 'Archivos: Entrada y Salida',
+        title: 'Archivos y Procesamiento de Datos',
+        minHours: 8, // 4 archivos + 4 procesamiento según sílabo
         lessons: [
           {
             id: 'arch-1',
@@ -898,4 +917,102 @@ export function getRandomQuestions(courseId: string, count: number): Question[] 
   const allQuestions = getAllQuizQuestions(courseId);
   const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, Math.min(count, shuffled.length));
+}
+
+// Función para calcular el total de horas del curso
+export function getTotalCourseHours(courseId: string): number {
+  const course = courses.find(c => c.id === courseId);
+  if (!course) return 0;
+  return course.totalMinHours || 0;
+}
+
+// Interfaz para el resultado de validación de tiempo
+export interface TimeValidation {
+  isValid: boolean;
+  minHoursRequired: number;
+  hoursAssigned: number;
+  shortfall: number;
+  message: string;
+  unitWarnings: { unitTitle: string; minHours: number; assignedHours: number }[];
+}
+
+// Función para validar si el tiempo asignado es suficiente según el sílabo
+export function validateStudyTime(
+  courseId: string, 
+  totalSessionsOrWeeks: number, 
+  sessionDurationMinutes: number,
+  sessionsPerWeek?: number
+): TimeValidation {
+  const course = courses.find(c => c.id === courseId);
+  if (!course) {
+    return {
+      isValid: true,
+      minHoursRequired: 0,
+      hoursAssigned: 0,
+      shortfall: 0,
+      message: 'Curso no encontrado',
+      unitWarnings: []
+    };
+  }
+
+  // Calcular horas totales asignadas
+  let totalSessions: number;
+  if (sessionsPerWeek) {
+    // Modo por período (semanas)
+    totalSessions = totalSessionsOrWeeks * sessionsPerWeek;
+  } else {
+    // Modo personalizado (sesiones totales)
+    totalSessions = totalSessionsOrWeeks;
+  }
+  
+  const hoursAssigned = (totalSessions * sessionDurationMinutes) / 60;
+  const minHoursRequired = course.totalMinHours || 0;
+  const shortfall = Math.max(0, minHoursRequired - hoursAssigned);
+  
+  // Calcular advertencias por unidad
+  const unitWarnings: { unitTitle: string; minHours: number; assignedHours: number }[] = [];
+  const hoursPerUnit = hoursAssigned / course.units.length;
+  
+  course.units.forEach(unit => {
+    if (hoursPerUnit < unit.minHours) {
+      unitWarnings.push({
+        unitTitle: unit.title,
+        minHours: unit.minHours,
+        assignedHours: Math.round(hoursPerUnit * 10) / 10
+      });
+    }
+  });
+
+  const isValid = hoursAssigned >= minHoursRequired;
+  
+  let message = '';
+  if (!isValid) {
+    message = `⚠️ El tiempo asignado (${hoursAssigned.toFixed(1)}h) es menor al mínimo recomendado según el sílabo (${minHoursRequired}h). Faltan ${shortfall.toFixed(1)} horas.`;
+  } else {
+    message = `✅ El tiempo asignado (${hoursAssigned.toFixed(1)}h) cumple con el mínimo del sílabo (${minHoursRequired}h).`;
+  }
+
+  return {
+    isValid,
+    minHoursRequired,
+    hoursAssigned: Math.round(hoursAssigned * 10) / 10,
+    shortfall: Math.round(shortfall * 10) / 10,
+    message,
+    unitWarnings
+  };
+}
+
+// Función para calcular las horas mínimas por lección basándose en la unidad
+export function getLessonMinHours(courseId: string, lessonId: string): number {
+  const course = courses.find(c => c.id === courseId);
+  if (!course) return 0;
+  
+  for (const unit of course.units) {
+    const lesson = unit.lessons.find(l => l.id === lessonId);
+    if (lesson) {
+      // Distribuir las horas de la unidad entre sus lecciones
+      return unit.minHours / unit.lessons.length;
+    }
+  }
+  return 0;
 }

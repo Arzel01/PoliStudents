@@ -11,7 +11,7 @@ import {
   CalendarDays,
   Inbox
 } from 'lucide-react';
-import './Calendar.css';
+import '../styles/pages/Calendar.css';
 
 interface CalendarEvent {
   id: string;

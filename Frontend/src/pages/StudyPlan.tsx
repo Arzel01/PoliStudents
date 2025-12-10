@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { courses, type Course, type Unit, type Lesson as CourseLesson } from '../data/courses';
-import { ArrowLeft, Calendar, Flame, BookOpen, Clock, CheckCircle, Check, ChevronDown, ChevronRight, FileText } from 'lucide-react';
-import './StudyPlan.css';
+import { ArrowLeft, Calendar, Flame, BookOpen, Clock, CheckCircle, Check, ChevronDown, ChevronRight, FileText, Bot, Sparkles } from 'lucide-react';
+import '../styles/pages/StudyPlan.css';
 
 interface Lesson {
   id: string;
@@ -158,6 +158,12 @@ export default function StudyPlan() {
             <span className="technique-badge">{plan.technique}</span>
           </div>
           <div className="header-actions">
+            <button 
+              className="action-btn ai-btn" 
+              onClick={() => navigate('/ai-assistant', { state: { subject: plan.title, planId: plan.id } })}
+            >
+              <Bot size={18} /> <Sparkles size={14} className="sparkle" /> Personalizar
+            </button>
             <button className="action-btn" onClick={() => navigate('/calendar', { state: { plan } })}>
               <Calendar size={18} /> Calendario
             </button>
@@ -257,7 +263,11 @@ export default function StudyPlan() {
                         >
                           {completedLessons.has(lesson.id) ? <Check size={16} /> : ''}
                         </button>
-                        <div className="lesson-content">
+                        <div 
+                          className="lesson-content"
+                          onClick={() => navigate(`/study/${lesson.id}`, { state: { config } })}
+                          style={{ cursor: 'pointer' }}
+                        >
                           <span className="lesson-number">{lIndex + 1}.</span>
                           <div className="lesson-details">
                             <h4>{lesson.title}</h4>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Brain, Sparkles, BookOpen, Clock, Target, Lightbulb } from 'lucide-react';
-import './GeneratingPlan.css';
+import '../styles/pages/GeneratingPlan.css';
 
 const loadingMessages = [
   'Analizando tu material de estudio...',
